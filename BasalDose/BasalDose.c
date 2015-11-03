@@ -39,7 +39,7 @@ void BasalDose_DoseEnable(void)
 	LPC_TIM0->IR |= 1 << 0; // Clear MR0 interrupt flag
 	LPC_GPIO1->FIOPIN ^= 1 << 29; // Toggle the LED
 
-	NVIC_EnableIRQ(TIMER1_IRQn); //Enable Timer1 IRQ
+	NVIC_EnableIRQ(TIMER1_IRQn); // Enable Timer1 IRQ
 }
 
 // Set up Timer1 for the speed of the stepper motor
@@ -62,6 +62,6 @@ void BasalDose_DoseInject(void)
 	LPC_TIM1->IR |= 1 << 0; // Clear MR0 interrupt flag
 	LPC_GPIO1->FIOPIN ^= 1 << 28; // Toggle the LED
 	
-	// call the stepper motor
+	// Call the stepper motor
 	StepperMotor_StepForward();
 }
