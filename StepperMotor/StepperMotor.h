@@ -18,7 +18,7 @@
  * from where it starts.
  */
  
-void StepperMotor_Initiate();
+void StepperMotor_Initiate(void);
 
 /* Function: StepperMotor_StepForward()
  *
@@ -26,7 +26,8 @@ void StepperMotor_Initiate();
  * Function is used to make half steps on the stepper motor.
  * Currently, adds StepperMotor_GlobalPosition and StepperMotor_CurrentPosition by 1 with each half step.
  */
-void StepperMotor_StepFoward();
+ 
+void StepperMotor_StepFoward(void);
 
 /* Function: StepperMotor_StepBackward()
  *
@@ -34,6 +35,6 @@ void StepperMotor_StepFoward();
  * Function makes half steps on the stepper motor.
  * Currently, subtracts StepperMotor_GlobalPosition and StepperMotor_CurrentPosition by 1 with each half step.
  */
-void StepperMotor_StepBackward();
+void StepperMotor_StepBackward(void);
 
 #endif /* STEPPERMOTOR_STEPPERMOTOR_H_ */

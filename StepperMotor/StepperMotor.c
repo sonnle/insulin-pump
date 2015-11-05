@@ -7,6 +7,7 @@
 
 #include "Control.c"
 #include "StepperMotor.h"
+#include "BasalDose.h"
 
 // Global variables
 uint32_t StepperMotor_CurrentPosition;
