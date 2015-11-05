@@ -7,8 +7,12 @@
 
 #include "lpc17xx.h"                 // Device header
 #include "StepperMotor.h"
+#include "BasalDose.h"
+#include "BolusDose.h"
 
-extern StepperMotor_GlobalPosition;
+// Global variables declared in other files
+extern uint32_t StepperMotor_GlobalPosition;
+extern uint32_t BasalDose_DoseAmountCounter;
 
 // Create bool
 typedef enum {false, true} bool;
@@ -28,6 +32,7 @@ int main(void)
 	
 	StepperMotor_Initiate(); // Initialize the stepper motor
 	BasalDose_DoseTimingInitiate(); // Initialize Timer0
+	BolusDose_DoseInitiate(); // Initialize External Interrupt 3
 
 	while(1);
 }
@@ -40,6 +45,4 @@ bool Control_IsSyringeEmpty()
 	else
 		return false;
 }
-
-
 
